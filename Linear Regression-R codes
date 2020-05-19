@@ -1,0 +1,16 @@
+# Linear Regression
+
+In the dataset of automobiles, in order to find the relationship between miles per gallon(dependent variable) with cylinder, displacement,
+weight, horsepower, acceleration and model year(independent variables). I used simple and multiple linear models. There were total 398
+observations about automobiles. Using Rstudio*, I explored the data and found that variable horsepower was captured in factor instead of
+numeric format and there were some data entry issues as some entries were marked as "?". When I changed this variable from factor to
+numeric format, the issue resolved as NA; in R, missing values are represented by the symbol NA (not available). After this, I divided the 
+dataset into two parts, i.e., training set and test set. Training set has 300 observations, whereas test set has 98. I did this for 
+validation. Using the training dataset, I fitted approximately 60 models (please refer the log submitted with the report) and selected the
+best model based on the highest value of adjusted R squared. I use adjusted R squared  instead of multiple R squared because it also 
+adjusts the number of predictors in selecting the best model. The best model: 
+	
+mpg=6.761682+(-0.353565 )cylinder+(-0.005489)weight+(0.447231)model.year
+
+has adjusted R squared 0.8143 and multiple R squared 0.8161. Using this model, I predicted the value of the mpg of test set
+(98 observations). 
