@@ -42,7 +42,8 @@ old age people. Surprisingly, in pie chart the female percentage is slightly hig
 and merely by chance. Using bar chart, the presence of married and single in default group is similar but singles are more in 
 non-defaulter group which can be linked to less economic burden on singles. As second step of EDA, five-point summary is generated for
 all continuous variables. However, frequency is generated for categorical variables (please see output for details). 
-DATA ANALYSIS:
+
+### DATA ANALYSIS:
 Before training a model to predict the probability of being defaulter, first, the multicollinearity among the variables is explored and 
 addressed as its presence could mislead us about the significance of variables present in the model. For this purpose, heatmap and
 VIF are used.  Heatmap for continuous variables suggests that variables for amount of bill from April to September are highly correlated.
@@ -58,6 +59,4 @@ and amount paid in September and August months are found highly significant. The
 with sensitivity of 86% along with the specificity of 53.1% after using threshold of 0.3 (please see the confusion matrix below).
 The sensitivity and specificity were comparable for other thresholds. The model trained using the training set was validated on the test
 set. 
-CONFUSION MATRIX FOR TRAINING SET & TEST SET
- 
 The test set validated the model for its accuracy in predicting defaulter and provided the sensitivity of 87% along with the specificity of 51% at the same threshold of 0.3. The other thresholds, i.e., 0.1 to 0.75 are also used, but the highest sensitivity was observed for 0.3 threshold. For further analysis, I created ROC (Receiver Operating Characteristics) curve (please see the output) by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold cutoffs. The area under the ROC curve is 0.76, confirming again that trained model is very good in predicting the defaulters with high sensitivity. I also plotted the lift chart (please see the output) and it shows the likeliness of model to identify more defaulters than a random sample. By using the lift curve, it is found that the model can identify 2 times more defaulters than the random sample even by just using 50% of the data. Due to the presence of a large number of independent variables, model is not provided here (please see the output for estimates), but other than marriage, education and bill amount the parameter estimates of variables are negative and suggest the log odds of being defaulter are decreasing after increasing the independent variable. Therefore, the past six months payments are negatively correlated with the log odds of the defaulter. For bill amount, the odds of being defaulter is increasing for an increase in bill amount. The similar inferences can be made for each of the independent variable. In conclusion, the logistic model suggested here can be used to predict the defaulter with high sensitivity. 
